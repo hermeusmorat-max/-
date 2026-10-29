@@ -1,0 +1,34 @@
+plugins {
+    id 'net.neoforged.moddev' version '1.0.24'
+}
+
+group = 'dev.alisa'
+version = '1.0.0'
+
+base {
+    archivesName = 'noverticalcull-1.21.1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+neoForge {
+    version = '21.1.250'
+    mods {
+        noverticalcull {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    // Sodium нужен только на этапе компиляции, в мод не входит
+    compileOnly files('libs/sodium-neoforge.jar')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="noverticalcull"
+version="1.0.0"
+displayName="No Vertical Culling"
+description='''
+Removes vertical section distance culling in Sodium, so terrain
+is visible down to the world floor when looking from high altitude.
+'''
+
+[[mixins]]
+config="noverticalcull.mixins.json"
+
+[[dependencies.noverticalcull]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.noverticalcull]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="CLIENT"
